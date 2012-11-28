@@ -2,15 +2,15 @@
 /**
  * @package PECF (PavelEspinal Category Filter)
  * @author Pavel Espinal
- * @version 1.0
+ * @version 1.1
  */
 /*
  Plugin Name:   PE Category Filter
  Plugin URI:    http://pavelespinal.com/resume/downloads/
- Description:   This plugin filters the Categories that will show up in the front page of your website.<br/> This plugin attempts to be a well written way to filter categories on Wordpress.
- Version:       1.0
+ Description:   This plugin filters the Categories that will show up in the front page of your website.<br/> This plugin attempts to be a well written (using WP native methods) way to filter categories on Wordpress.
+ Version:       1.1
  Author:        J. Pavel Espinal
- Author URI:    http://www.pavelespinal.com
+ Author URI:    http://pavelespinal.com/resume/about
  License:       GPL2
 
     Copyright 2012  J. Pavel Espinal  (email : jose@pavelespinal.com)
@@ -93,7 +93,7 @@ function pecf_cb_catlist_html() {
     
     $options = get_option('pecf_cat-list');
     
-    $args = array( 'taxonomy' => 'category');
+    $args = array( 'taxonomy' => 'category', 'hide_empty' => 0);
     $cat_list = get_categories($args);
     
     if(is_array($options)) {
